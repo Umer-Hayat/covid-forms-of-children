@@ -1,0 +1,613 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Patient Info</title>
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <link rel="stylesheet" href="css/pfandroid.css">
+  <link rel="stylesheet" href="css/parsley.css">
+  <script src="js/addChild.js"></script>
+  <script src="js/copy.js"></script>
+  <script src="js/signature.js"></script>
+  <script src="js/parsley.min.js"></script>
+  <script>
+  function verify(){
+      if ($('#form1').parsley().validate())  
+           {
+           signatureSave();
+          }
+   }
+  </script>
+  </head>
+  <body>
+
+ <div  align="center">
+ <label class="headline" align="center">Smiles For Kids Patient Registration Form</label>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  	<form method="post" accept-charset="utf-8" name="form1" id="form1" data-parsley-validate  onsubmit="verify()">
+	 <input name="hidden_data" id='hidden_data' type="hidden"/>
+    <table bgcolor="#F0FFF0" id='TextBoxesGroup' width=960px cellpadding="5"  cellspacing="0">
+	
+        <tr>
+          <td colspan="4" class="head">CHILD'S INFORMATION </td>
+        </tr>
+        <tr ="TextBoxDiv1">
+          <td class="style6"><label for="CH_ChildsFirstName1"  class="required">Child's First Name:</label></td>
+          <td class="right"><input size="20" name="CH_ChildsFirstName1" class="text" id="CH_ChildsFirstName1" placeholder="Child's First Name" required maxlength="100" maxsize="100" type="text" /></td>
+	  <td class="style6"><label for="CH_ChildsLastName1" class="required" >Child's Last Name:</label></td>
+          <td class="right"><input size="20" name="CH_ChildsLastName1" class="text" id="CH_ChildsLastName1"   placeholder="Child's Last Name" required maxlength="100" maxsize="100" type="text" /></td>
+	  </tr>
+	<tr id="Text2BoxDiv1">
+		<td class="style6"><label for="CH_ChildsDateOfBirth1" class="required"> Child's DOB :</label></td>
+          <td class="right"><input size="20" name="CH_ChildsDateOfBirth1" class="text" id="CH_ChildsDateOfBirth1"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date" /></td>
+          <td class="style6"><label>Child's Sex: <span class="required"></span></label></td>
+          <td  class="right">
+	   <div class="styled-select">
+	  <select name="CH_ChildsSex1" id="CH_ChildsSex1" required value>
+			<option value="">Select One</option>
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+	  </select>
+	  </div>	
+	</td>
+        </tr>
+  </table>
+           <input type='button' value='Add More Children' id='addButton'> <input type='button' value='Remove Children' id='removeButton'> 
+    <table bgcolor="#F4ECF8" width=960px border=0 cellpadding="5"  cellspacing="0">
+
+      <tbody>
+        <tr>
+          <td colspan="4"> </td>
+        </tr
+        <tr>
+          <td colspan="4" class="head"> Parents Guardian Information </td>
+        </tr>
+         <tr>
+          <td colspan="4" class="left"> Mother's Information </td>
+        </tr>
+        <tr>
+    <td class="style6">
+    <label>Relationship:<span class="required"></span></label>
+    </td>
+    <td class="right" colspan="2">
+     <input name="MO_Relationship"  id="MRelationship_M" value="Mother" type="radio">
+      <label class="style6">Mother</label>
+     <input name="MO_Relationship"   id="MRelationship_G" value="Guardian" type="radio">
+      <label class="style6">Guardian</label>
+     <input name="MO_Relationship"  id="MRelationship_S" value="Stepmother" type="radio" required>
+      <label class="style6">Stepmother</label> 
+    </td>
+      </tr>
+
+  <tr>
+  <td class="style6">
+   <label>First Name: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersFirstName" class="text" id="MothersFirstName_S"  required maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Last Name: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersLastName" class="text" id="MothersLastName_S"  required maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+   <label>Mother's Birthdate: <span class="required"></span></label>
+  </td>
+  <td class="right">
+<input size="20" name="MO_MothersDateOfBirth" class="text" id="MO_MothersDateOfBirth"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date" /></td>
+  </td>
+
+  <td class="style6">
+   <label>Mother's SSN : <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersSsn" class="text" id="MothersSsn_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+   <label>Street Address: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersStreetAddress" class="text" id="MothersStreetAddress_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Street Address Line 2:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersStreetAddress2" class="text" id="MothersStreetAddress2_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+  </tr>
+ <tr>
+  <td class="style6">
+   <label>City: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersCity" class="text" id="MothersCity_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>State: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersState" class="text" id="MothersState_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+  </tr>
+ <tr>
+  <td class="style6">
+   <label>Zip: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersZip" class="text" id="MothersZip_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+ <td>&nbsp;</td>
+  <td>&nbsp;</td>
+
+
+ </tr>
+ <tr>
+  <td class="style6">
+   <label>Mother's Employer:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersEmployer" class="text" id="MothersEmployer_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Mother's Driver's License #:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_Mother'sDriversLicense" class="text" id="MothersDriversLicens_S"  maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+  <label>Mother's Home Phone:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersHomePhone" class="text" id="MothersHomePhone_S"maxlength="100" maxsize="100" required type="text">
+  </td>
+
+  <td class="style6">
+   <label>Mother's Work Phone:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersWorkPhone" class="text" id="MothersWorkPhone_S"maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+  <label>Mother's Mobile Phone:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersMobilePhone" class="text" id="MothersMobilePhone_S" maxlength="100" maxsize="100" required type="text">
+  </td>
+  <td class="style6">
+   <label>Mother's Occupation: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="MO_MothersOccupation" class="text" id="MothersOccupation_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+ </tr>
+      </tbody>
+    </table>
+    <table bgcolor="#DDFFFF" width=960px border=0 cellpadding="5"  cellspacing="0">
+      <tbody>
+   <tr>
+      <td colspan="4"> </td>
+    </tr><tr>
+     <td colspan="4" class="left"> Father's Information </td>
+      </tr>
+         <tr>
+    <td class="style6" valign="top">
+	    <label>Relationship:<span class="required"></span></label>
+    </td>
+    <td class="right" valign="top" colspan="2">
+     <input name="FA_Relationship"  id="FRelationship_M" value="Father" type="radio">
+      <label class="style6">Father</label>
+     <input name="FA_Relationship"  id="FRelationship_G" value="Guardian" type="radio">
+      <label class="style6">Guardian</label>
+     <input name="FA_Relationship"  id="FRelationship_S" value="Stepfather" type="radio" required>
+      <label class="style6">Stepfather</label>
+    </td>
+  
+      </tr>
+     <tr>
+  <td class="style6">
+   <label>First Name: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersFirstName" class="text" id="FathersFirstName_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Last Name: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersLastName" class="text" id="FathersLastName_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+   <label>Father's Birthdate: <span class="required"></span></label>
+  </td>
+  <td class="right">
+	<input size="20" name="FA_FathersDateOfBirth" class="text" id="FA_FathersDateOfBirth_S"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date" />
+  </td>
+
+  <td class="style6">
+   <label>Father's SSN : <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersSsn" class="text" id="FathersSsn_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+        <tr>
+		<td class="style6" colspan="4"><label>Same as above</label> <input type="checkbox" id="same_as_billing" </td>
+        </tr>
+  <td class="style6">
+   <label>Street Address: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersStreetAddress" class="text" id="FathersStreetAddress_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Street Address Line 2:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersStreetAddress2" class="text" id="FathersStreetAddress2_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+  </tr>
+ <tr>
+  <td class="style6">
+   <label>City: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersCity" class="text" id="FathersCity_S" required maxlength="100" maxsize="100"  type="text">
+  </td>
+
+  <td class="style6">
+   <label>State: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersState" class="text" id="FathersState_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+   </tr>
+ <tr>
+  <td class="style6">
+   <label>Zip: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersZip" class="text" id="FathersZip_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+  </tr>
+ <tr>
+  <td class="style6">
+   <label>Father's Employer:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersEmployer" class="text" id="FathersEmployer_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Father's Driver's License #: </label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersDriversLicense" class="text" id="FathersDriversLicens_S"  maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+  <label>Father's Home Phone:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersHomePhone" class="text" id="FathersHomePhone_S"maxlength="100" maxsize="100" required type="text">
+  </td>
+
+  <td class="style6">
+   <label>Father's Work Phone:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersWorkPhone" class="text" id="FathersWorkPhone_S"maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+  <label>Father's Mobile Phone:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersMobilePhone" class="text" id="FathersMobilePhone_S" maxlength="100" maxsize="100" required type="text">
+  </td>
+   <td class="style6">
+   <label>Father's Occupation: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="FA_FathersOccupation" class="text" id="FathersOccupation_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ </tbody>
+    </table>
+    <table bgcolor="#FFFFDD" width=960px border=0 cellpadding="5"  cellspacing="0">
+      <tbody>
+   <tr>
+     <td colspan="4" class="head"> Responsible Party's Information </td>
+     </tr>
+
+  <tr>
+    <td class="style6">
+   <label>First Name: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="RP_ResponsiblePartysFirstName" class="text" id="ResponsiblePartysFirstName_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Last Name: <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="RP_ResponsiblePartysLastName" class="text" id="ResponsiblePartysLastName_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+
+ <tr>
+  <td class="style6">
+   <label>Relationship : <span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="RP_ResponsiblePartysRelationship" class="text" id="ResponsiblePartysRelationship_S" required maxlength="100" maxsize="100" type="text">
+  </td>
+  <td class="style6">
+   <label>Referred to our office by</label>
+  </td>
+  <td class="right">
+   <input size="20" name="RP_ReferredBy" class="text" id="ReferredBy_S" maxlength="100" maxsize="100" type="text">
+  </td>
+ </tr>
+ 
+    </table>
+    <table bgcolor="#F2F3F2" width=960px   cellpadding="5" border=0 cellspacing="0">
+ <tr>
+  <td colspan="4" class="head">
+    INSURANCE INFORMATION</td>
+ </tr>
+ <tr>
+  <td colspan="4" class="left">
+     PRIMARY (Note:If no insurnace please fill NA)</td>
+ </tr>
+ <tr>
+  <td class="style6">
+  <label>Primary Insurance Co:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_PrimaryInsuranceCo" class="text" id="PrimaryInsuranceCo_S" maxlength="100" maxsize="100" required type="text">
+  </td>
+    <td class="style6">
+   <label>Primary Ins. Phone #:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_PrimaryInsPhone" class="text" id="PrimaryInsPhone_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+  <label>Primary Ins. Co. Address:</span>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_PrimaryInsCoAddress" class="text" id="PrimaryInsCoAddress_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+  <label>Primary Insured Name:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_PrimaryInsuredName" class="text" id="PrimaryInsuredName_S" maxlength="100" maxsize="100" required type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+  <label>Relationship:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_PrimaryRelationship" class="text" id="PrimaryRelationship_S" maxlength="100" maxsize="100" required type="text">
+  </td>
+
+  <td class="style6">
+  <label>Primary Insured ID/Employee:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_PrimaryInsuredIDEmpl" class="text" id="PrimaryInsuredIDEmpl_S" maxlength="100" maxsize="100" required  type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+	  <label>Employer:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_PrimaryEmployer" class="text" id="PrimaryEmployer_S" required  maxlength="100"maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+	  <label>Group #:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_PrimaryGroup" class="text" id="PrimaryGroup_S" maxlength="100" maxsize="100" required type="text">
+  </td>
+
+ </tr>
+
+<tr>
+  <td colspan="4" class="left">
+     Secondary</td>
+ </tr>
+ <tr>
+  <td class="style6">
+   <label>Secondary Insurance Co:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_SecondaryInsuranceCo" class="text" id="SecondaryInsuranceCo_S" maxlength="100" maxsize="100" type="text">
+  </td>
+    <td class="style6">
+   <label>Secondary Ins. Phone #:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_SecondaryInsPhone" class="text" id="SecondaryInsPhone_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+   <label>Secondary Ins. Co. Address:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_SecondaryInsCoAddress" class="text" id="SecondaryInsCoAddress_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Secondary Insured Name:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_SecondaryInsuredName" class="text" id="SecondaryInsuredName_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+   <label>Relationship:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_SecondaryRelationship" class="text" id="SecondaryRelationship_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Secondary Insured ID/Employee:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_SecondaryInsuredIDEmpl" class="text" id="SecondaryInsuredIDEmpl_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td class="style6">
+   <label>Employer:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_SecondaryEmployer" class="text" id="SecondaryEmployer_S" maxlength="100"maxsize="100" type="text">
+  </td>
+
+  <td class="style6">
+   <label>Group #:</label>
+  </td>
+  <td class="right">
+   <input size="20" name="IN_SecondaryGroup" class="text" id="SecondaryGroup_S" maxlength="100" maxsize="100" type="text">
+  </td>
+
+ </tr>
+ <tr>
+  <td colspan="4" class="style6"><p>
+    It is our policy to discuss our fees and financial arrangement openly
+    and honestly with you.  Regardless of whether you have dental insurance
+    or not, you are responsible for the full financial cost of dental
+    treatment.  Every effort will be made to estimate to the best of our
+    ability the total cost of dental treatment.  Please be aware that
+    treatment rendered may vary from the estimated treatment plan due to the
+    continual progression of dental decay with time.  Payment is expected
+    as dental services are performed unless financial arrangements have been
+    previously made with our office.
+  </p></td>
+
+ </tr>
+
+ <tr>
+  <td class="style6">
+	  <label>E-mail Address:</label><span class="required"></span>
+  </td>
+  <td class="right">
+   <input size="20" name="SI_EmailAddress" class="text" id="EmailAddress_S" maxlength="100" maxsize="100" required type="email">
+  </td>
+  <td class="style6">
+	  <label>Signed By:<span class="required"></span></label>
+  </td>
+  <td class="right">
+   <input size="20" name="SI_SignedBy" class="text" id="Name_S" maxlength="100" maxsize="100" required type="text">
+  </td>
+ </tr>
+  <tr>
+  <td class="style6">
+  <label>Signature:<span class="required"></span></label>
+  </td>
+  <td>
+
+                <div id="canvas">
+		       
+                        <canvas class="pad" id="newSignature"
+                        style="position: relative; margin: 0; padding: 0; border: 1px solid #c4caac;"></canvas>
+                </div>
+
+                <script>
+			signatureCapture();
+                </script>
+		<br>
+                <button type="button" onclick="signatureClear()">
+                        Clear signature
+                </button>
+                </br>
+  </td>
+ <td class="style6">
+   <label>Date:</label>
+  </td>
+  <td class="right">
+ <input size="20" name="SI_SignedOn" class="text" id="SignedOn_S" readonly maxlength="100"maxsize="100" type="text" >
+ <input type="hidden"  size="20" name="SI_IPAddress" class="text" id="SI_IPAddress_S" required maxlength="100" maxsize="100" type="text">
+  <script>
+var d = new Date();
+document.getElementById("SignedOn_S").value = d.toLocaleDateString();
+</script>
+  </td>
+
+</tr>
+<tr>
+  <td class="left">&nbsp;
+  </td>
+  <td class="right">
+   <button type="button" class="mybtn" id="btnSubmit" onclick="verify()">Submit</button>
+ </td>
+ </tr>
+</tbody>
+  </table>
+ </form>
+ 
+<div id="dialog-message" title="My Dialog Title" align=center> </div>
+</div>
+  </body>
+  </html>
+
