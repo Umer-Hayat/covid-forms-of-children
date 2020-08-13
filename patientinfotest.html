@@ -7,19 +7,6 @@
     
     <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
   <script src="js/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
-   	<script type="text/javascript">
-   	jQuery(document).ready(function($){
-    
-    var canvas = document.getElementById("newSignature");
-    var signaturePad = new SignaturePad(canvas);
-    
-    $('#clear-signature').on('click', function(){
-        signaturePad.clear();
-    });
-    
-});
-   	</script>
   <script src="js/jquery-ui.js"></script>
   <!-- <link rel="stylesheet" href="css/pfandroid.css">
   <link rel="stylesheet" href="css/parsley.css"> -->
@@ -27,9 +14,8 @@
   <script src="js/copy.js"></script>
   <script src="js/signature.js"></script>
   <script src="js/parsley.min.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom/style.css">
   <script>
   function verify(){
       if ($('#form1').parsley().validate())  
@@ -38,7 +24,6 @@
           }
    }
   </script>
-
 </head>
 <body>
 
@@ -65,7 +50,7 @@ function googleTranslateElementInit() {
 				<input class="form-control" size="20" name="CH_ChildsFirstName1" class="text" id="CH_ChildsFirstName1" placeholder="Child's First Name" required maxlength="100" maxsize="100" type="text" required="" />
 			</div>
 			<div class="col-md-6">
-				<label  >Child's Last Name:</label>
+				<label>Child's Last Name:</label>
 				<input class="form-control" size="20" name="CH_ChildsLastName1" class="text" id="CH_ChildsLastName1"   placeholder="Child's Last Name" required maxlength="100" maxsize="100" type="text" required="" />
 			</div>
 		</div>
@@ -76,7 +61,7 @@ function googleTranslateElementInit() {
 			</div>
 			<div class="col-md-6">
 				<label>Child's Sex:</label>
-				<select class="browser-default custom-select" name="CH_ChildsSex1" id="CH_ChildsSex1"value required="">
+				<select class="browser-default custom-select" name="CH_ChildsSex1" id="CH_ChildsSex1"  value required="">
 			      <option value="">Select One</option>
 			      <option value="Male">Male</option>
 			      <option value="Female">Female</option>
@@ -105,7 +90,7 @@ function googleTranslateElementInit() {
 	<form >
 		<div class="row">
 			<div class="col-md-3">
-				<label>Relationship:</label>
+				<label>Relationship</label>
 			</div>
 			<div class="col-md-9">
 				<div class="form-check form-check-inline">
@@ -118,8 +103,8 @@ function googleTranslateElementInit() {
 	      			<label >Guardian</label>
 			</div>
 			<div class="form-check form-check-inline">
-			   		<input class="form-check-input" name="MO_Relationship"  id="MRelationship_S" value="Stepmother" type="radio" required >
-      				<label >Stepmother</label> 
+			   		<input class="form-check-input" name="MO_Relationship"  id="MRelationship_S" value="Stepmother" type="radio" required="" >
+      				<label>Stepmother</label> 
 			</div>
 			</div>
 		</div>
@@ -129,73 +114,73 @@ function googleTranslateElementInit() {
 				<input  size="20" name="MO_MothersFirstName" class="form-control text" id="MothersFirstName_S"  required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >Last Name:</label>
+				<label>Last Name:</label>
 				<input size="20" name="MO_MothersLastName" class="form-control text" id="MothersLastName_S"  required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Mother's Birthdate:</label>
-				<input size="20" name="MO_MothersDateOfBirth" class="form-control text" id="MO_MothersDateOfBirth"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date"  required="" />
+				<label>Mother's Birthdate:</label>
+				<input size="20" name="MO_MothersDateOfBirth" class="form-control text" id="MO_MothersDateOfBirth"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date" required="" />
 			</div>
 			<div class="col-md-6">
-				<label >Mother's SSN :</label>
+				<label>Mother's SSN :</label>
 				 <input size="20" name="MO_MothersSsn" class="form-control text" id="MothersSsn_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Street Address:</label>
+				<label>Street Address:</label>
 				<input size="20" name="MO_MothersStreetAddress" class="form-control text" id="MothersStreetAddress_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >Street Address Line 2:</label>
+				<label>Street Address Line 2:</label>
 				 <input size="20" name="MO_MothersStreetAddress2" class="form-control text" id="MothersStreetAddress2_S" maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >City:</label>
+				<label>City:</label>
 				<input size="20" name="MO_MothersCity" class="form-control text" id="MothersCity_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >State:</label>
+				<label>State:</label>
 				 <input size="20" name="MO_MothersState" class="form-control text" id="MothersState_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Zip:</label>
+				<label>Zip:</label>
 				<input size="20" name="MO_MothersZip" class="form-control text" id="MothersZip_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Mother's Employer:</label>
+				<label>Mother's Employer:</label>
 				 <input size="20" name="MO_MothersEmployer" class="form-control text" id="MothersEmployer_S" maxlength="100" maxsize="100" type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >Mother's Driver's License #:</label>
+				<label>Mother's Driver's License #:</label>
 				 <input size="20" name="MO_Mother'sDriversLicense" class="form-control text" id="MothersDriversLicens_S"  maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Mother's Home Phone:</label>
+				<label>Mother's Home Phone:</label>
 				 <input size="20" name="MO_MothersHomePhone" class="form-control text" id="MothersHomePhone_S"maxlength="100" maxsize="100" required type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >Mother's Work Phone:</label>
+				<label>Mother's Work Phone:</label>
 				 <input size="20" name="MO_MothersWorkPhone" class="form-control text" id="MothersWorkPhone_S"maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Mother's Mobile Phone:</label>
+				<label>Mother's Mobile Phone:</label>
 				 <input size="20" name="MO_MothersMobilePhone" class="form-control text" id="MothersMobilePhone_S" maxlength="100" maxsize="100" required type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >Mother's Occupation:</label>
+				<label>Mother's Occupation:</label>
 				 <input size="20" name="MO_MothersOccupation" class="form-control text" id="MothersOccupation_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
@@ -215,31 +200,31 @@ function googleTranslateElementInit() {
 			<div class="col-md-9">
 				<div class="form-check form-check-inline">
 			   		<input class="form-check-input" name="MO_Relationship"   id="FRelationship_F" value="Father" type="radio" required="">
-      				<label >Father</label>
+      				<label>Father</label>
 				</div>
 				<div class="form-check form-check-inline">
 				    <input class="form-check-input" name="MO_Relationship"   id="FRelationship_G" value="Guardian" type="radio" required="">
 	      			<label >Guardian</label>
 				</div>
 				<div class="form-check form-check-inline">
-			   		<input class="form-check-input" name="MO_Relationship"  id="FRelationship_S" value="Stepfather" type="radio" required  >
-      				<label >Stepfather</label> 
+			   		<input class="form-check-input" name="MO_Relationship"  id="FRelationship_S" value="Stepfather" type="radio" required >
+      				<label>Stepfather</label> 
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >First Name:</label>
+				<label>First Name:</label>
 				<input size="20" name="FA_FathersFirstName" class="form-control text" id="FathersFirstName_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >Last Name:</label>
-				 <input size="20" name="FA_FathersLastName" class="form-control text" id="FathersLastName_S" required maxlength="100" maxsize="100" type="text" required="">
+				<label>Last Name:</label>
+				 <input size="20" name="FA_FathersLastName" class="form-control text" id="FathersLastName_S" required maxlength="100" maxsize="100" type="text">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Father's Birthdate:</label>
+				<label>Father's Birthdate:</label>
 				<input size="20" name="FA_FathersDateOfBirth" class="form-control text" id="FA_FathersDateOfBirth_S"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date" required="" />
 			</div>
 			<div class="col-md-6">
@@ -265,7 +250,7 @@ function googleTranslateElementInit() {
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Street Address:</label>
+				<label>Street Address:</label>
 				<input size="20" name="FA_FathersStreetAddress" class="form-control text" id="FathersStreetAddress_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 			<div class="col-md-6">
@@ -279,23 +264,23 @@ function googleTranslateElementInit() {
 				<input size="20" name="FA_FathersCity" class="form-control text" id="FathersCity_S" required maxlength="100" maxsize="100"  type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >State:</label>
+				<label>State:</label>
 				<input size="20" name="FA_FathersState" class="form-control text" id="FathersState_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label for="FathersZip_S" class="required">Zip:</label>
+				<label>Zip:</label>
 				<input size="20" name="FA_FathersZip" class="form-control text" id="FathersZip_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Father's Employer:</label>
+				<label>Father's Employer:</label>
 				<input size="20" name="FA_FathersEmployer" class="form-control text" id="FathersEmployer_S" maxlength="100" maxsize="100" type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >Father's Driver's License #:</label>
+				<label>Father's Driver's License #:</label>
 				<input size="20" name="FA_FathersDriversLicense" class="form-control text" id="FathersDriversLicens_S"  maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
@@ -305,13 +290,13 @@ function googleTranslateElementInit() {
 				<input size="20" name="FA_FathersHomePhone" class="form-control text" id="FathersHomePhone_S"maxlength="100" maxsize="100" required type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >Father's Work Phone:</label>
+				<label>Father's Work Phone:</label>
 				<input size="20" name="FA_FathersWorkPhone" class="form-control text" id="FathersWorkPhone_S"maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Father's Mobile Phone:</label>
+				<label>Father's Mobile Phone:</label>
 				<input size="20" name="FA_FathersMobilePhone" class="form-control text" id="FathersMobilePhone_S" maxlength="100" maxsize="100" required type="text" required="">
 			</div>
 			<div class="col-md-6">
@@ -330,7 +315,7 @@ function googleTranslateElementInit() {
 				<input size="20" name="RP_ResponsiblePartysFirstName" class="form-control text" id="ResponsiblePartysFirstName_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 			<div class="col-md-6">
-				<label >Last Name:</label>
+				<label>Last Name:</label>
 				<input size="20" name="RP_ResponsiblePartysLastName" class="form-control text" id="ResponsiblePartysLastName_S" required maxlength="100" maxsize="100" type="text" required="">
 			</div>
 		</div>
@@ -384,7 +369,7 @@ function googleTranslateElementInit() {
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label>Employer:</label>
+				<label >Employer:</label>
 				<input size="20" name="IN_PrimaryEmployer" class="form-control text" id="PrimaryEmployer_S" required  maxlength="100"maxsize="100" type="text" required="">
 			</div>
 			<div class="col-md-6">
@@ -462,18 +447,26 @@ function googleTranslateElementInit() {
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<label >Signature:</label>
+				<label>Signature:</label>
 				<!-- <textarea readonly class="form-control" rows="8"></textarea> -->
 				<!-- <input size="20" name="SI_EmailAddress" class="form-control text" id="EmailAddress_S" maxlength="100" maxsize="100" required type="email">
 
 
 				 -->
+
 				 <div id="canvas">
-<canvas id="newSignature" width="450" height="150" style="border: 1px solid #ddd;"></canvas>
-<br>
-<button class="btn" id="clear-signature">Clear</button>
-			</div>	
+		       
+                        <canvas class="pad" id="newSignature"
+                        style="position: relative; margin: 0; padding: 0; border: 1px solid #c4caac;"></canvas>
+                </div>
+
+                <script>
+			signatureCapture();
+                </script>
 		<br>
+                <button class="btn" type="button" onclick="signatureClear()">
+                        Clear signature
+                </button>
 			</div>
 			<div class="col-md-6">
 				<label>Date:</label>

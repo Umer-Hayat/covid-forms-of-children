@@ -1,58 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title></title>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="custom/style.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/pfandroid.css">
-  <link rel="stylesheet" href="css/parsley.css">
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/signature.js"></script>
-  <script src="js/parsley.min.js"></script>
-   <script type="text/javascript">
- $(document).ready(function() {
-    $('#notoall').click(function(event) {  //on click 
-        if(this.checked) { // check select status
-            $('.checkbox1').each(function() { //loop through each checkbox
-                this.checked = true;
-                //alert('parsley-id-multiple-' + this.name);
-                $('#parsley-id-multiple-' + this.name).hide().removeClass("parsley-required");
-                           
-            });
-        }else{
-            $('.checkbox1').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox1"
-                $('#parsley-id-multiple-' + this.name).show().addClass("parsley-required");
-             });         
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery.js"></script>
+    	  <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+   	<script type="text/javascript">
+   	jQuery(document).ready(function($){
+    var canvas = document.getElementById("newSignature");
+    var signaturePad = new SignaturePad(canvas);
+    
+    $('#clear-signature').on('click', function(){
+        signaturePad.clear();
     });
     
 });
-
-
-  function verify(){
+   	</script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/covid.js"></script>
+  <script src="js/signature.js"></script>
+  <script src="js/parsley.min.js"></script>
+   <script type="text/javascript">
+  function test(){
     
-      if ($('#medical1').parsley().validate())  
-           {
-           medicalSave();
-          }
-   }
-  </script>
+       covidSave();
+    }
   
+  
+  
+</script> 
 </head>
 <body>
+    
 <div class="container">
  <div class="col-md-12 text-center">
     <p class="heading">Coronavirus (COVID-19) Pandemic Dental Treatment Consent Form</p>
-    <a href="">CLICK Here to Read about CDC Coronavirus (COVID-19) Info</a>
+     <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-dark" onclick="showDialog('CDC Coronavirus (COVID-19)','I\'ve read and understand this')" id="<iframe src='https://www.cdc.gov/coronavirus/2019-ncov/index.html' width='100%' height='100%'></iframe>"  data-toggle="modal" data-target="#dialog-message">
+   CLICK Here to Read about CDC Coronavirus (COVID-19) Info
+  </button>
+   <br>
+   <br>
+  <!-- The Modal -->
+    <div class="modal fade" id="dialog-message">
+      <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body edit-content">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="modbutton" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+         
  </div>
   <fieldset class="scheduler-border">
     <legend class="scheduler-border">Purpose of Consent</legend>
-    <form>
+     <form method="post" accept-charset="utf-8" id="covid1" name="covid1" data-parsley-validate onsubmit="test()"> 
       <div class="row">
         <div class="col-md-12">
            <p>
@@ -63,55 +75,65 @@
                 </p>
             </div>
           </div>
-               <div class="row">
+                <div class="row">
                  <div class="col-md-9">
-                    <label><p align="justify"><span class="required"></span> I have been made aware of the CDC and ADA guidelines that under the current pandemic all non-urgent dental care is not recommended. Dental visits should be limited to the treatment of pain, infection, conditions that significantly inhibit normal operation of teeth and mouth, and issues that may cause anything listed above within the next 3-6 months.</p></label>
+                    <label><p align="justify">I understand that due to the frequency of visits of other dental patients, the characteristics of the virus, and the characteristics of dental procedures, that I have an elevated risk of contracting the virus simply by being in a dental office.</p></label >
                  </div>
                  <div class="col-md-3">
-                   <input size="20" placeholder="Initial" class="form-control" name="CV_Initial2" required type="text" />
+                  <input name="hidden_data" id='hidden_data' type="hidden" / required="">
+                   <input size="20" placeholder="Initial" class="form-control" name="CV_Initial1"  type="text" required="" />
+                 </div>
+               </div>               
+
+               <div class="row">
+                 <div class="col-md-9">
+                    <label><p align="justify"> I have been made aware of the CDC and ADA guidelines that under the current pandemic all non-urgent dental care is not recommended. Dental visits should be limited to the treatment of pain, infection, conditions that significantly inhibit normal operation of teeth and mouth, and issues that may cause anything listed above within the next 3-6 months.</p></label>
+                 </div>
+                 <div class="col-md-3">
+                   <input size="20" placeholder="Initial" class="form-control" name="CV_Initial2"  type="text" required="" />
                  </div>
                </div>
                <div class="row">
                  <div class="col-md-9">
-                    <label><p align="justify"><span class="required"></span> I confirm I am seeking treatment for a condition that meets these criteria.</p></label>
+                    <label><p align="justify"></span> I confirm I am seeking treatment for a condition that meets these criteria.</p></label>
                  </div>
                  <div class="col-md-3">
-                    <input size="20" placeholder="Initial" class="form-control" name="CV_Initial3" required type="text" />
+                    <input size="20" placeholder="Initial" class="form-control" name="CV_Initial3"  type="text" required="" />
                  </div>
                </div>
                 
                 <div class="row">
                   <div class="col-md-9">
-                     <label><p align="justify"><span class="required"></span> I confirm that I am not presenting any of the following symptoms of COVOID-19 that includes
+                     <label><p align="justify"> I confirm that I am not presenting any of the following symptoms of COVOID-19 that includes
                   <font color=red>Fever, Shortness of Breath, Dry Cough, Runny Nose ,Sore Throat. </font>
                 </p></label>
                   </div>
                   <div class="col-md-3">
-                      <input size="20" placeholder="Initial" class="form-control" name="CV_Initial4" required type="text" />
+                      <input size="20" placeholder="Initial" class="form-control" name="CV_Initial4"  type="text" required="" />
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-9">
-                    <label><p align="justify"><span class="required"></span> I understand that air travel significantly increases my risk of contracting and transmitting the COVID-19 virus. And the CDC recommends social distancing of at least 6 feet for a period of 14 days to anyone who has, and this is not possible with dentistry.</p></label>
+                    <label><p align="justify">I understand that air travel significantly increases my risk of contracting and transmitting the COVID-19 virus. And the CDC recommends social distancing of at least 6 feet for a period of 14 days to anyone who has, and this is not possible with dentistry.</p></label>
                   </div>
                   <div class=" col-md-3">
-                        <input size="20" placeholder="Initial" class="form-control" name="CV_Initial5" required type="text" />
+                        <input size="20" placeholder="Initial" class="form-control" name="CV_Initial5"  type="text" required="" />
                   </div>
                 </div>
                  
                  <div class="row">
                    <div class="col-md-9">
-                      <label><p align="justify"><span class="required"></span> I verify that I have not traveled outside the United States in the past 14 days to countries that have been affected by COVID-19. </p></label>
+                      <label><p align="justify"> I verify that I have not traveled outside the United States in the past 14 days to countries that have been affected by COVID-19. </p></label>
                    </div>
                    <div class="col-md-3">
-                          <input size="20" placeholder="Initial" class="form-control" name="CV_Initial6" required type="text" />
+                          <input size="20" placeholder="Initial" class="form-control" name="CV_Initial6"  type="text" required="" />
                    </div>
                  </div>
             
                  <div class="row">
                    <div class="col-md-9">
-                       <label><p align="justify"><span class="required"></span> I verify that I have not traveled domestically within the United States by commercial airline, bus, or train within the past 14 days. </p></label>
+                       <label><p align="justify"> I verify that I have not traveled domestically within the United States by commercial airline, bus, or train within the past 14 days. </p></label>
                    </div>
                    <div class="col-md-3">
                       <input size="20" placeholder="Initial" class="form-control" name="CV_Initial7" required type="text" />
@@ -119,13 +141,13 @@
                  </div>
                  <div class="row">
                    <div class="col-md-3">
-                      <label>Child's Name: <span class="required"></span></label>
+                      <label>Child's Name: </label>
                    </div>
                    <div class="col-md-3">
                      <input size="20" name="CV_ChildsName" class="form-control" required type="text"/>
                    </div>
                    <div class="col-md-3">
-                     <label>Your Name: <span class="required"></span></label>
+                     <label>Your Name: </label>
                    </div>
                    <div class="col-md-3">
           <input size="20" name="CV_YourName" class="text form-control" id="CV_YourName" placeholder="Your Name" required maxlength="100" maxsize="100" type="text" />
@@ -136,7 +158,7 @@
            <br>
         <div class="row">
          <div class="col-md-3">
-            <label>Relationship to Patient<span class="required"></span></label>
+            <label>Relationship to Patient</label>
          </div>
          <div class="col-md-3">
             <select name="CV_Relationship" class="form-control" required>
@@ -151,26 +173,27 @@
            <label>Date:</label>
          </div>
          <div class="col-md-3"> 
-           <input size="20" name="SI_SignedOn" class="text form-control" id="SignedOn_S"  maxlength="100"maxsize="100" type="text" >
+           <input size="20" name="SI_SignedOn" class="text form-control" id="SignedOn_S"  maxlength="100"maxsize="100" type="text" required="">
          </div>
+         <script>
+         var d = new Date();
+          document.getElementById("SignedOn_S").value = d.toLocaleDateString();
+         </script>
         </div>
         
       
         <div class="col-md-3">
-          <label>Signature:<span class="required"></span></label>
-<!-- 
-                        <canvas required class="pad" id="newSignature" style="position: relative; margin: 0; padding: 0; border: 0px solid #c4caac;"></canvas> -->
-                  <textarea class="form-control" rows="4" cols="10"></textarea>      
-             
+          <label>Signature:</label>
+                        <canvas required class="pad" id="newSignature" style="position: relative; margin: 0; padding: 0; border: 2px solid #ced4da;"></canvas> 
+     <!--             <div id="canvas">
+          <canvas id="newSignature" class="form-control" width="450" height="150" style="border: 1px solid #ddd;"></canvas> 
+-->
 
-                <script>
-      signatureCapture();
-                </script>
-                <br>
-             
-                <button class="btn btn-success" type="button" class="mybtn" onclick="signatureClear()">
+    <br>
+                <button class="btn" type="button" onclick="signatureClear()">
                         Clear signature
                 </button>
+                </div>
                 </br> <br>
                 <button type="button" class="btn btn-primary" id="btnSubmit" onclick="test()">Submit</button>
         </div>
@@ -178,7 +201,6 @@
     </form>
   </fieldset>
 </div>
-
 
 <!--Required JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
